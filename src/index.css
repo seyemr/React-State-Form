@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.koyu {
+  background-color: gray;
+  color: white;
+}
+
+.acik{
+  background-color: white;
+  color: black;
+}
+
+.anasayfa{
+  height: 100vh;
+}

@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Sayac from "./components/Sayac";
+import Form from './components/Form';
+import { useState } from 'react';
 
 function App() {
+  const [tema, setTema] = useState("Açık");
+  const [showForm, setShowForm] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`anasayfa ${tema === "Açık" ? "acik" : "koyu"}`}>
+      <div className='btn-group'>
+        <button className='btn btn-warning' onClick={() => setShowForm(true)}>Form</button>
+        <button className='btn btn-primary' onClick={() => setShowForm(false)}>Sayaç</button>
+      {/* {showForm ? "Formu Göster" : "Sayacı Göster"} */}
+      </div>
+
+       {showForm === true ? <Form/> : <Sayac tema = {tema} setTema = {setTema}/>}
     </div>
   );
 }
